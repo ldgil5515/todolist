@@ -1,0 +1,53 @@
+<!-- html5 사용 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>To Do List</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://kit.fontawesome.com/b9a49cecfb.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="BoxA">
+            <div class="Title">
+                <header>
+                    <h2>TO DO LIST</h2>
+                </header>
+                <div class="container">
+                    <div></div>
+                    <input type="text" id="Entertext" class="ASD"> 
+                    <i class="fas fa-plus-circle" id="EnterButton"></i>
+                    <div></div>
+                </div>
+            </div>
+            <div class="showlists">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            let button = document.querySelector("#EnterButton");
+            let text = document.querySelector("#Entertext");
+            let lists = document.querySelector(".showlists ul");
+
+            button.addEventListener('click', addlist);
+        
+            function addlist() {
+                if(text.value){
+                    let temp = document.createElement('li');
+                    temp.innerHTML = text.value + "<i class=\"far fa-trash-alt Removebutton\"></i>";
+                    lists.append(temp);
+                    temp = document.querySelectorAll(".Removebutton");
+                    temp[temp.length-1].addEventListener('click',function(){
+                        this.parentNode.parentNode.removeChild(this.parentNode);
+                    });
+                    temp = document.querySelectorAll(".showlists ul li");
+                    temp[temp.length-1].addEventListener('click',function(){
+                        temp[temp.length-1].classList.toggle('checked');
+                    });
+                    text.value="";
+                }
+            }
+        </script>
+    </body>
+</html>

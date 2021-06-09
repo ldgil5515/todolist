@@ -1,0 +1,106 @@
+.BoxA {
+    margin: 0px auto;
+    width: 550px;
+}
+
+header {
+    user-select: none;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+.Title {
+    background: linear-gradient(225deg, #01ac8f, #4ce6c9);
+    height: 150px;
+    
+}
+.container {
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#Entertext {
+    flex-grow: 3;
+    border-radius: 15px;
+    border: 1px solid #ffffff;
+    height: 30px;
+    padding: 0px 30px;
+}
+
+#Entertext:focus {
+    outline: none;
+  }
+
+.container div {
+    flex-grow: 1;
+}
+
+#EnterButton {
+    font-size: 32px;
+    position: relative;
+    left: 10px;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+#EnterButton:hover {
+    transform: rotate(45deg);
+}
+
+.showlists {
+    margin: 0px auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.showlists ul li{
+    user-select: none;
+    cursor: pointer;
+    display: inline-flexbox;
+    position: relative;
+    padding: 13px 0px 13px 100px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.showlists ul li:hover{
+    background-color: #dddddd;
+}
+
+.showlists ul li .Removebutton{
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 100px;
+    transition: 0.3s;
+    color: #888888;
+}
+
+.showlists ul li .Removebutton:hover{
+   color: #000000;
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #272341;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 16px;
+    left: 40px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
